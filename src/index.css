@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-medium-webfont.woff');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-bold-webfont.woff');
+  font-weight: 700;
+  font-style: normal;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-white dark:bg-black text-gray-900 dark:text-white;
+  font-family: 'SF Pro Display', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.glass {
+  @apply backdrop-blur-lg bg-white/50 dark:bg-black/50;
+}
+
+.section-heading {
+  @apply text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-10 opacity-0;
+}
+
+.section-content {
+  @apply max-w-5xl mx-auto p-8 opacity-0;
+}
+
+.appear {
+  animation: appear 1s forwards;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.staggered-appear:nth-child(1) { animation-delay: 0.1s; }
+.staggered-appear:nth-child(2) { animation-delay: 0.2s; }
+.staggered-appear:nth-child(3) { animation-delay: 0.3s; }
+.staggered-appear:nth-child(4) { animation-delay: 0.4s; }
+.staggered-appear:nth-child(5) { animation-delay: 0.5s; }
+.staggered-appear:nth-child(6) { animation-delay: 0.6s; }
+.staggered-appear:nth-child(7) { animation-delay: 0.7s; }
+.staggered-appear:nth-child(8) { animation-delay: 0.8s; }
+
+.clip-circle {
+  clip-path: circle(50% at 50% 50%);
+  transition: clip-path 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-clip-circle:hover .clip-circle {
+  clip-path: circle(75% at 50% 50%);
+}
